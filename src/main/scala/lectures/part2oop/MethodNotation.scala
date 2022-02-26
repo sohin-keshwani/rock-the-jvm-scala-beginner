@@ -1,4 +1,4 @@
-package lectures.part2op
+package lectures.part2oop
 
 object MethodNotation extends App {
   class Person(val name: String, favouriteMovie: String, val age: Int) {

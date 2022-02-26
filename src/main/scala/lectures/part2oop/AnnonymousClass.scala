@@ -1,4 +1,4 @@
-package lectures.part2op
+package lectures.part2oop
 
 object AnnonymousClass extends App {
   abstract class Animal {
