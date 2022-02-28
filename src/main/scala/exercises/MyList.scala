@@ -101,9 +101,7 @@ object ListTest extends App {
   println(listOfInts.toString)
   println(listOfStrings.toString)
 
-  println(listOfInts.map(new Function1[Int, Int] {
-    override def apply(e: Int): Int = e * e
-  }))
+  println(listOfInts.map((e) => e * e))
 
   println(listOfStrings.map((e: String) => {
     e + " " + e
@@ -113,6 +111,9 @@ object ListTest extends App {
     e.equalsIgnoreCase("shoni") || e.equalsIgnoreCase("fiju")
   }).toString)
 
+  println((listOfInts ++ listOfAnotherInts).filter((e) => e % 2 ==0))
+  println((listOfInts ++ listOfAnotherInts).filter(_ % 2 ==0)) // we can shorthand this input with _
+
   println((listOfInts ++ listOfAnotherInts).toString)
 
   /*println((listOfInts++ listOfAnotherInts).flatMap(new MyTransformer[Int, MyList[Int]] {
@@ -120,6 +121,8 @@ object ListTest extends App {
   }).toString)*/
 
 
+  // cannot shorthand ele below with _ as everytime i will add underscore compiler will assume it is new input type
+  // so effectively it will expect flatMap to accept three parameters instead of one which is used to carry it forward
   println((listOfInts++ listOfAnotherInts).flatMap((ele: Int) => {
     new Cons(ele, new Cons(ele + 1, Empty))
   }).toString)
