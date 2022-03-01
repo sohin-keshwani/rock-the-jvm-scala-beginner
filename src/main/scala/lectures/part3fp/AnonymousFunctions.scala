@@ -20,6 +20,7 @@ object AnonymousFunctions extends App {
   val niceAddress: (Int, Int) => Int = _ + _ // use underscores very carefully as type representations can be lost and compiler will no know how to deal wth them
 
   val superAdd = (x: Int) => (y: Int) => x + y
-  println(superAdd(4)(4))
+  val x = superAdd(5)
+  println(x(4))
 
 }
