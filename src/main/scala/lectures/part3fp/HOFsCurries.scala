@@ -12,6 +12,7 @@ object HOFsCurries extends App {
   }
 
   val plusOne : Int => Int = _ + 1
+  val plusTen: Int => Int = _ * 10
 
   println(nTimes(plusOne, 10, 1))
 
@@ -22,6 +23,9 @@ object HOFsCurries extends App {
 
   val plus10 = nTimesBetter(plusOne, 10)
   println(plus10(1))
+
+  val plusTen3 = nTimesBetter(plusTen, 3)
+  println("plus ten 3: " + plusTen3(10))
 
   val superAdd : Int => (Int => Int) = (x: Int) => (y: Int)  => x + y
 
