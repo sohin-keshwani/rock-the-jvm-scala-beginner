@@ -23,7 +23,7 @@ object TuplesAndMaps extends App {
   println(phonebook.toList)
   println(List(("shohin", 123)).toMap)
 
-  val names = List("fai", "iffi", "mosh", "shohin", "sufii")
+  val names = List("fai", "iffi", "mosh", "shohin", "sufi")
 
   println(names.groupBy(name => name.charAt(0)))
 
